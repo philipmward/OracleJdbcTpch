@@ -1,0 +1,148 @@
+run:
+Loading Oracle driver
+Connected to the Oracle database
+
+Oracle and JDBC Project 1
+By: Philip Ward
+
+TABLE CUSTOMER
+    NUMBER C_CUSTKEY
+    VARCHAR2 C_NAME
+    VARCHAR2 C_ADDRESS
+    VARCHAR2 C_PHONE
+    NUMBER C_ACCTBAL
+    VARCHAR2 C_MKTSEGMENT
+
+TABLE EMPLOYEE
+    CHAR EID
+    VARCHAR2 ELAST
+    VARCHAR2 EFIRST
+    VARCHAR2 ETITLE
+    NUMBER ESALARY
+
+TABLE LINEITEM
+    NUMBER L_ORDERKEY
+    NUMBER L_LINENUMBER
+    NUMBER L_PARTKEY
+    NUMBER L_SUPPKEY
+    NUMBER L_QUANTITY
+    VARCHAR2 L_SHIPINSTRUCT
+    VARCHAR2 L_SHIPMODE
+
+TABLE ORDERS
+    NUMBER O_ORDERKEY
+    NUMBER O_CUSTKEY
+    VARCHAR2 O_ORDERSTATUS
+    NUMBER O_TOTALPRICE
+    VARCHAR2 O_ORDERDATE
+    VARCHAR2 O_ORDERPRIORITY
+
+TABLE PART
+    NUMBER P_PARTKEY
+    VARCHAR2 P_NAME
+    VARCHAR2 P_MFR
+    VARCHAR2 P_BRAND
+    NUMBER P_SIZE
+    NUMBER P_RETAILPRICE
+
+TABLE PARTSUPP
+    NUMBER PS_PARTKEY
+    NUMBER PS_SUPPKEY
+    NUMBER PS_AVAILQTY
+    NUMBER PS_SUPPLYCOST
+
+TABLE SUPPLIER
+    NUMBER S_SUPPKEY
+    VARCHAR2 S_NAME
+    VARCHAR2 S_ADDRESS
+    VARCHAR2 S_PHONE
+    NUMBER S_ACCTBAL
+
+TABLE TAKES
+    CHAR EID
+    CHAR CID
+    NUMBER TYEAR
+    NUMBER TMONTH
+    NUMBER TDAY
+
+TABLE TECHNOLOGYAREA
+    CHAR AID
+    VARCHAR2 ATITLE
+    VARCHAR2 AURL
+    CHAR ALEADID
+
+TABLE TRAININGCOURSE
+    CHAR CID
+    VARCHAR2 CTITLE
+    NUMBER CHOURS
+    CHAR AREAID
+
+VIEW CUSTOMERSWITHORDER
+
+VIEW CUSTOMERSWITHOUTURGENTORDER
+
+VIEW CUSTOMERWITHURGENTORDER
+
+VIEW ORDERSWITHONELINEITEM
+
+VIEW SUPPLIERSUPPLYCOSTGREATER800
+
+VIEW SUPPLIERSUPPLYCOSTGREATER900
+
+Query 1: Which customers have never placed an urgent order?
+
+customerName   phone             accountBalance      marketSegment 
+Customer#01    989-741-2988      711.56              BUILDING
+Customer#02    768-687-3665      121.65              AUTOMOBILE
+Customer#08    147-574-9335      6819.74             BUILDING
+
+Query 2: Which orders have only one line item?
+
+orderKey   customerKey       orderDate        orderTotal 
+1217           7             1992-04-26       40982.10
+3142           8             1992-06-28       16030.20
+5220           10            1992-07-30       24844.40
+2726           7             1992-11-27       47753.00
+1602           1             1993-08-05       4225.26
+1895           7             1994-05-30       44429.80
+5446           7             1994-06-21       29920.80
+3330           7             1994-12-19       43255.20
+2916           8             1995-12-27       20182.20
+4100           4             1996-03-12       3892.77
+1860           10            1996-04-04       9103.40
+1223           10            1996-05-25       26714.70
+1669           2             1997-06-09       24362.40
+4165           4             1997-07-25       11405.40
+5123           10            1998-02-10       11850.50
+
+Query 3a: Which Suppliers supply parts with a supply cost > 800?
+
+supplierName       partKey      supplyCost
+Supplier#4         160          999.93
+Supplier#8         1            993.49
+Supplier#4         29           981.33
+Supplier#8         175          978.56
+Supplier#3         84           969.44
+Supplier#3         8            957.34
+Supplier#3         74           930.97
+Supplier#9         12           901.70
+Supplier#8         161          893.72
+Supplier#3         138          885.35
+Supplier#2         183          875.44
+Supplier#3         113          860.68
+Supplier#1         15           835.70
+
+Query 3b: Which Suppliers supply parts with a supply cost > 900?
+
+supplierName       partKey      supplyCost
+Supplier#4         160          999.93
+Supplier#8         1            993.49
+Supplier#4         29           981.33
+Supplier#8         175          978.56
+Supplier#3         84           969.44
+Supplier#3         8            957.34
+Supplier#3         74           930.97
+Supplier#9         12           901.70
+
+Connection closed.
+BUILD SUCCESSFUL (total time: 7 seconds)
